@@ -6,7 +6,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
 
-def generate_maze(rows=30, cols=30): # 改小一點，不然 Emoji 會太小或影片太大
+def generate_maze(rows=30, cols=30): 
     maze = [[0 for _ in range(cols)] for _ in range(rows)]
     for i in range(rows):
         for j in range(cols):
@@ -29,7 +29,7 @@ stack = []
 stack.append((x, y))
 
 # --- 影片設定 ---
-CELL_SIZE = 40 # Emoji 需要大一點的格子
+CELL_SIZE = 40 
 width = cols * CELL_SIZE
 height = rows * CELL_SIZE
 fourcc = cv2.VideoWriter_fourcc(*'MJPG')
@@ -127,3 +127,4 @@ if x == 1 and y == 1:
 
 out.release()
 print("影片已儲存為 maze_video_emoji.avi")
+
